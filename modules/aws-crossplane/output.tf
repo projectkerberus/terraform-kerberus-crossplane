@@ -5,12 +5,9 @@ output "gcp_provider" {
   })
 }
 
-output "aws_access_key_id" {
-  value = aws_iam_access_key.crossplane.id
-}
-
-output "aws_secret_access_key" {
-  value = aws_iam_access_key.crossplane.secret
+output "aws_secret" {
+  description = "AWS secrets"
+  value       = join("\n",["[default]","aws_access_key_id = ${aws_iam_access_key.crossplane.id}","aws_secret_access_key = ${aws_iam_access_key.crossplane.secret}"])
   sensitive = true
 }
 
