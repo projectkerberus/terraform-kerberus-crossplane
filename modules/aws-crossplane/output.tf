@@ -1,5 +1,5 @@
-output "gcp_provider" {
-  description = "GCP provider YAML"
+output "aws_provider" {
+  description = "AWS provider YAML"
   value = templatefile(join("/", [path.module, "./files/aws-provider-template.yml"]), {
     crossplane_registry = var.crossplane_registry
   })

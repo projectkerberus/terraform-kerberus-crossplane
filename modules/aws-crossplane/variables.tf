@@ -1,5 +1,5 @@
 variable "aws_iam_user" {
-  description = "AWS Iiam user to be created to be used by Crossplane AWS Provider"
+  description = "AWS Iam user to be created to be used by Crossplane AWS Provider"
   default     = "kerberus-crossplane"
 }
 
@@ -12,7 +12,6 @@ variable "aws_policy" {
 variable "crossplane_registry" {
   description = "registry for the aws Crossplane package"
   type        = string
-  # da cambiare? 
   default     = "crossplane/provider-aws:master"
 }
 

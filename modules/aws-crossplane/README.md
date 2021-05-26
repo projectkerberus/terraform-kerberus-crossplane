@@ -1,12 +1,12 @@
-# Terraform Kerberus GCP Crossplane
+# Terraform Kerberus AWS Crossplane
 
-Terraform module which configure the Kerberus Crossplane for gcp.
+Terraform module which configure the Kerberus Crossplane for AWS.
 
 ## Usage
 
 ```hcl
-module "kerberus_gcp_crossplane" {
-  source = "project-kerberus/gcp_crossplane/kerberus"
+module "kerberus_aws_crossplane" {
+  source = "project-kerberus/aws_crossplane/kerberus"
 
   path_kubeconfig =  "~/.kube/config"
 }
@@ -14,20 +14,19 @@ module "kerberus_gcp_crossplane" {
 
 ## Examples
 
-* [GCP](../../examples/gcp/)
-
+* [AWS](../../examples/aws/)
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.08 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | 3.62.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.42.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 3.62.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.42.0 |
 
 ## Modules
 
@@ -37,28 +36,25 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [google_project_iam_binding.iam_project](https://registry.terraform.io/providers/hashicorp/google/3.62.0/docs/resources/project_iam_binding) | resource |
-| [google_project_service.project_service](https://registry.terraform.io/providers/hashicorp/google/3.62.0/docs/resources/project_service) | resource |
-| [google_service_account.service_account](https://registry.terraform.io/providers/hashicorp/google/3.62.0/docs/resources/service_account) | resource |
-| [google_service_account_key.crossplan_key](https://registry.terraform.io/providers/hashicorp/google/3.62.0/docs/resources/service_account_key) | resource |
-| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/3.62.0/docs/data-sources/project) | data source |
+| [aws_iam_access_key.crossplane](https://registry.terraform.io/providers/hashicorp/aws/3.42.0/docs/resources/iam_access_key) | resource |
+| [aws_iam_user.crossplane](https://registry.terraform.io/providers/hashicorp/aws/3.42.0/docs/resources/iam_user) | resource |
+| [aws_iam_user_policy.EKS](https://registry.terraform.io/providers/hashicorp/aws/3.42.0/docs/resources/iam_user_policy) | resource |
+| [aws_iam_user_policy_attachment.crossplane_policy](https://registry.terraform.io/providers/hashicorp/aws/3.42.0/docs/resources/iam_user_policy_attachment) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_crossplane_registry"></a> [crossplane\_registry](#input\_crossplane\_registry) | registry for the gcp Crossplane package | `string` | `"ghcr.io/projectkerberus/provider-gcp:v0.17.1"` | no |
-| <a name="input_gcp_roles"></a> [gcp\_roles](#input\_gcp\_roles) | GCP Roles to assigne at the created service account | `set(string)` | <pre>[<br>  "roles/iam.serviceAccountUser",<br>  "roles/cloudsql.admin",<br>  "roles/container.admin",<br>  "roles/redis.admin",<br>  "roles/compute.networkAdmin",<br>  "roles/storage.admin"<br>]</pre> | no |
-| <a name="input_gcp_service_account_id"></a> [gcp\_service\_account\_id](#input\_gcp\_service\_account\_id) | SA id to be created to be used by Crossplane GCP Provider | `string` | `"kerberus-crossplane"` | no |
-| <a name="input_gcp_service_account_name"></a> [gcp\_service\_account\_name](#input\_gcp\_service\_account\_name) | SA name to be created to be used by Crossplane GCP Provider | `string` | `"Kerberus Crossplane Service Account"` | no |
-| <a name="input_gcp_services"></a> [gcp\_services](#input\_gcp\_services) | API Services to activate | `set(string)` | <pre>[<br>  "container.googleapis.com",<br>  "sqladmin.googleapis.com",<br>  "redis.googleapis.com",<br>  "compute.googleapis.com",<br>  "servicenetworking.googleapis.com"<br>]</pre> | no |
+| <a name="input_aws_iam_user"></a> [aws\_iam\_user](#input\_aws\_iam\_user) | AWS Iam user to be created to be used by Crossplane AWS Provider | `string` | `"kerberus-crossplane"` | no |
+| <a name="input_aws_policy"></a> [aws\_policy](#input\_aws\_policy) | AWS Policy to assigne at the created IAM user | `set(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/AmazonRDSFullAccess",<br>  "arn:aws:iam::aws:policy/AmazonEC2FullAccess",<br>  "arn:aws:iam::aws:policy/AmazonVPCFullAccess",<br>  "arn:aws:iam::aws:policy/IAMFullAccess"<br>]</pre> | no |
+| <a name="input_crossplane_registry"></a> [crossplane\_registry](#input\_crossplane\_registry) | registry for the aws Crossplane package | `string` | `"crossplane/provider-aws:master"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_gcp_provider"></a> [gcp\_provider](#output\_gcp\_provider) | GCP provider YAML |
-| <a name="output_gcp_secret"></a> [gcp\_secret](#output\_gcp\_secret) | GCP secrets |
+| <a name="output_aws_provider"></a> [aws\_provider](#output\_aws\_provider) | AWS provider YAML |
+| <a name="output_aws_secret"></a> [aws\_secret](#output\_aws\_secret) | AWS secrets |
 
 ## Authors
 
