@@ -26,7 +26,7 @@ EOF
 }
 
 resource "aws_iam_user_policy_attachment" "crossplane_policy" {
-  for_each = var.aws_policy
+  for_each   = var.aws_policy
   user       = aws_iam_user.crossplane.name
   policy_arn = each.key
 }

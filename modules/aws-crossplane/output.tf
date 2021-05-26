@@ -7,7 +7,7 @@ output "aws_provider" {
 
 output "aws_secret" {
   description = "AWS secrets"
-  value       = join("\n",["[default]","aws_access_key_id = ${aws_iam_access_key.crossplane.id}","aws_secret_access_key = ${aws_iam_access_key.crossplane.secret}"])
-  sensitive = true
+  value       = join("\n", ["[default]", "aws_access_key_id = ${aws_iam_access_key.crossplane.id}", "aws_secret_access_key = ${aws_iam_access_key.crossplane.secret}"])
+  sensitive   = true
 }
 
