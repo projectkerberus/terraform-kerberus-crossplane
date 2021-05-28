@@ -1,6 +1,7 @@
 # Local test file
 config
 service-account.json
+creds
 
 # Local .terraform directories
 **/.terraform/*

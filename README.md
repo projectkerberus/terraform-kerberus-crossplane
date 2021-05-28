@@ -16,6 +16,7 @@ module "kerberus_crossplane" {
 
 * [Basic](./examples/basic)
 * [GCP](./examples/gcp)
+* [AWS](./examples/aws)
 
 ## Requirements
 
