@@ -15,5 +15,3 @@ terraform init
 terraform plan
 terraform apply
 ```
-
-4. Terraform will ask for a gcp Project id to use
