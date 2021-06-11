@@ -5,6 +5,6 @@ variable "azure_app_id" {
 variable "crossplane_registry" {
   description = "registry for the azure Crossplane package"
   type        = string
-  default     = "crossplane/provider-azure:v0.18.1"
+  default     = "crossplane/provider-azure:v0.16.1"
 }
 

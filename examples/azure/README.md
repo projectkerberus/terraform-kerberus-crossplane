@@ -6,7 +6,16 @@ A very simple and basic example with fake data.
 
 1. Put the `KUBECONFIG` file in the same folder of the example with the name `config`.
 
-2. Put the [aws credential file](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) file in the same folder of the example with the name `creds`
+2. Ensure your environment has defined the following variable 
+
+```bash
+ARM_CLIENT_ID="00000000-0000-0000-0000-000000000000"
+ARM_CLIENT_SECRET="00000000-0000-0000-0000-000000000000"
+ARM_SUBSCRIPTION_ID="00000000-0000-0000-0000-000000000000"
+ARM_TENANT_ID="00000000-0000-0000-0000-000000000000"
+```
+
+as [here explained](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret)
 
 3. Execute:
 

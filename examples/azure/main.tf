@@ -1,17 +1,3 @@
-provider "azurerm" {
-  # Configuration options
-features {}
-}
-
-provider "azuread" {
-  # Configuration options
-}
-
-data "azurerm_subscription" "main" {
-}
-data "azurerm_client_config" "current" {
-}
-
 provider "kubernetes" {
   config_path = var.PATH_KUBECONFIG
   insecure    = var.INSECURE_KUBECONFIG
@@ -23,27 +9,29 @@ provider "helm" {
   }
 }
 
-
-provider "aws" {
-  region                  = var.AWS_REGION
-  #shared_credentials_file = file(var.AWS_CREDS_PATH)
+provider "azurerm" {
+  # Configuration options
+  features {}
 }
 
+provider "azuread" {
+  # Configuration options
+}
 
-module "aws_crossplane" {
-  source = "../../modules/aws-crossplane"
+module "azure_crossplane" {
+  source = "../../modules/azure-crossplane"
 }
 
 module "crossplane" {
   source = "../../"
 
   depends_on = [
-    module.aws_crossplane
+    module.azure_crossplane
   ]
 
   path_kubeconfig = var.PATH_KUBECONFIG
 
-  crossplane_providers = { "aws-provider" : module.aws_crossplane.aws_provider }
-  crossplane_secrets   = { "aws-creds" : module.aws_crossplane.aws_secret }
+  crossplane_providers = { "azure-provider" : module.azure_crossplane.azure_provider }
+  crossplane_secrets   = { "azure-creds" : module.azure_crossplane.azure_secret }
 }
  
