@@ -1,5 +1,10 @@
-# Create Azure AD App random name
+# Import subscription data
+data "azurerm_subscription" "main" {
+}
+data "azurerm_client_config" "current" {
+}
 
+# Create Azure AD App random name
 
 resource "random_id" "main" {
   byte_length = 8
