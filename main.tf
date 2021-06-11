@@ -4,6 +4,7 @@ resource "kubernetes_namespace" "crossplane_namespace" {
   }
 }
 
+
 resource "helm_release" "crossplane" {
   name       = "crossplane"
   namespace  = kubernetes_namespace.crossplane_namespace.metadata[0].name
@@ -11,6 +12,7 @@ resource "helm_release" "crossplane" {
   chart      = var.crossplane_chart
   version    = var.crossplane_chart_version
   values     = var.crossplane_values_path != "" ? [file(var.crossplane_values_path)] : []
+  force_update = true
 }
 
 resource "kubernetes_secret" "create_credentials" {
