@@ -1,9 +1,13 @@
 terraform {
   required_version = ">= 0.14.08"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.42.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "2.63.0"
+    }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "1.5.1"
     }
   }
 }
