@@ -11,8 +11,8 @@ provider "helm" {
 
 
 provider "aws" {
-  region                  = var.AWS_REGION
-  shared_credentials_file = file(var.AWS_CREDS_PATH)
+  region = var.AWS_REGION
+  #shared_credentials_file = file(var.AWS_CREDS_PATH)
 }
 
 
