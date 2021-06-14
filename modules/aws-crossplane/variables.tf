@@ -12,6 +12,6 @@ variable "aws_policy" {
 variable "crossplane_registry" {
   description = "registry for the aws Crossplane package"
   type        = string
-  default     = "crossplane/provider-aws:v0.18.1"
+  default     = "ghcr.io/projectkerberus/provider-aws:v0.18.1"
 }
 
