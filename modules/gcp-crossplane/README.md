@@ -1,6 +1,6 @@
 # Terraform Kerberus GCP Crossplane
 
-Terraform module which configure the Kerberus Crossplane for gcp.
+Terraform module which configure GCP for Crossplane. 
 
 ## Usage
 
@@ -20,14 +20,14 @@ module "kerberus_gcp_crossplane" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.08 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | 3.62.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 3.71.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 3.62.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 3.71.0 |
 
 ## Modules
 
@@ -57,13 +57,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_gcp_provider"></a> [gcp\_provider](#output\_gcp\_provider) | GCP provider YAML |
-| <a name="output_gcp_secret"></a> [gcp\_secret](#output\_gcp\_secret) | GCP secrets |
-
-## Authors
-
-Module is maintained by [Kiratech](https://www.kiratech.it/) with help from [these awesome contributors](https://github.com/projectkerberus/terraform-kerberus-dashboard/graphs/contributors).
-
-## License
-
-See [LICENSE](../../LICENSE) for full details.
+| <a name="output_provider"></a> [provider](#output\_provider) | GCP provider YAML |
+| <a name="output_secret"></a> [secret](#output\_secret) | GCP secrets |

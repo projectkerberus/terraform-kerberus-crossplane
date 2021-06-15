@@ -12,7 +12,6 @@ provider "helm" {
 
 provider "aws" {
   region = var.AWS_REGION
-  #shared_credentials_file = file(var.AWS_CREDS_PATH)
 }
 
 
@@ -29,7 +28,7 @@ module "crossplane" {
 
   path_kubeconfig = var.PATH_KUBECONFIG
 
-  crossplane_providers = { "aws-provider" : module.aws_crossplane.aws_provider }
-  crossplane_secrets   = { "aws-creds" : module.aws_crossplane.aws_secret }
+  crossplane_providers = { "aws-provider" : module.aws_crossplane.provider }
+  crossplane_secrets   = { "aws-creds" : module.aws_crossplane.secret }
 }
  
