@@ -29,7 +29,7 @@ module "crossplane" {
 
   path_kubeconfig = var.PATH_KUBECONFIG
 
-  crossplane_providers = { "gcp-provider" : module.gcp_crossplane.gcp_provider }
-  crossplane_secrets   = { "gcp-creds" : module.gcp_crossplane.gcp_secret }
+  crossplane_providers = { "gcp-provider" : module.gcp_crossplane.provider }
+  crossplane_secrets   = { "gcp-creds" : module.gcp_crossplane.secret }
 }
  

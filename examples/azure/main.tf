@@ -31,7 +31,7 @@ module "crossplane" {
 
   path_kubeconfig = var.PATH_KUBECONFIG
 
-  crossplane_providers = { "azure-provider" : module.azure_crossplane.azure_provider }
-  crossplane_secrets   = { "azure-creds" : module.azure_crossplane.azure_secret }
+  crossplane_providers = { "azure-provider" : module.azure_crossplane.provider }
+  crossplane_secrets   = { "azure-creds" : module.azure_crossplane.secret }
 }
  

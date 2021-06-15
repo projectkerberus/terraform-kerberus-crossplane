@@ -1,6 +1,8 @@
 # Terraform Kerberus Crossplane
 
-Terraform module which deploy the Kerberus Crossplane on your Kubernates cluster.
+Terraform module which deploys Crossplane on your Kubernetes cluster. 
+
+> This module is part of the [Kerberus Platform](https://github.com/projectkerberus/kerberus-platform)  
 
 ## Usage
 
@@ -17,22 +19,23 @@ module "kerberus_crossplane" {
 * [Basic](./examples/basic)
 * [GCP](./examples/gcp)
 * [AWS](./examples/aws)
+* [Azure](./examples/azure)
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.08 |
-| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.0.3 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | 2.0.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.2.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | 2.3.2 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.0.3 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.0.3 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.2.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.3.2 |
 | <a name="provider_null"></a> [null](#provider\_null) | 3.1.0 |
 
 ## Modules
@@ -67,7 +70,7 @@ No outputs.
 
 ## Authors
 
-Module is maintained by [Kiratech](https://www.kiratech.it/) with help from [these awesome contributors](https://github.com/projectkerberus/terraform-kerberus-dashboard/graphs/contributors).
+The module is maintained by [Kiratech](https://www.kiratech.it/) with help from [these awesome contributors](https://github.com/projectkerberus/terraform-kerberus-dashboard/graphs/contributors).
 
 ## License
 

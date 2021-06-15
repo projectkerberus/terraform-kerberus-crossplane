@@ -1,6 +1,6 @@
 # Terraform Kerberus AWS Crossplane
 
-Terraform module which configure the Kerberus Crossplane for AWS.
+Terraform module which configure AWS for Crossplane. 
 
 ## Usage
 
@@ -15,6 +15,7 @@ module "kerberus_aws_crossplane" {
 ## Examples
 
 * [AWS](../../examples/aws/)
+
 ## Requirements
 
 | Name | Version |
@@ -53,13 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_provider"></a> [aws\_provider](#output\_aws\_provider) | AWS provider YAML |
-| <a name="output_aws_secret"></a> [aws\_secret](#output\_aws\_secret) | AWS secrets |
-
-## Authors
-
-Module is maintained by [Kiratech](https://www.kiratech.it/) with help from [these awesome contributors](https://github.com/projectkerberus/terraform-kerberus-dashboard/graphs/contributors).
-
-## License
-
-See [LICENSE](../../LICENSE) for full details.
+| <a name="output_provider"></a> [provider](#output\_provider) | AWS provider YAML |
+| <a name="output_secret"></a> [secret](#output\_secret) | AWS secrets |

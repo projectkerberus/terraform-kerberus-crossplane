@@ -1,6 +1,6 @@
 # Terraform Kerberus Azure Crossplane
 
-Terraform module which configure the Kerberus Crossplane for Azure.
+Terraform module which configure Azure for Crossplane. 
 
 ## Usage
 
@@ -19,7 +19,7 @@ module "kerberus_azure_crossplane" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.08 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | 1.5.1 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 2.63.0 |
 
@@ -29,7 +29,6 @@ module "kerberus_azure_crossplane" {
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 1.5.1 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 2.63.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
@@ -57,13 +56,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_azure_provider"></a> [azure\_provider](#output\_azure\_provider) | Azure provider YAML |
-| <a name="output_azure_secret"></a> [azure\_secret](#output\_azure\_secret) | Azure secrets |
-
-## Authors
-
-Module is maintained by [Kiratech](https://www.kiratech.it/) with help from [these awesome contributors](https://github.com/projectkerberus/terraform-kerberus-dashboard/graphs/contributors).
-
-## License
-
-See [LICENSE](../../LICENSE) for full details.
+| <a name="output_provider"></a> [provider](#output\_provider) | Azure provider YAML |
+| <a name="output_secret"></a> [secret](#outpute\_secret) | Azure secrets |
