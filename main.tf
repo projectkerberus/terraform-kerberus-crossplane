@@ -20,7 +20,7 @@ resource "kubernetes_secret" "create_credentials" {
 
   metadata {
     name      = each.key
-    namespace = var.crossplane_namespace
+    namespace = kubernetes_namespace.crossplane_namespace.metadata[0].name
   }
   data = {
     "credentials" = each.value
