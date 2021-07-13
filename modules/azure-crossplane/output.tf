@@ -6,8 +6,13 @@ output "provider" {
 }
 
 output "secret" {
-  description = "Azure secrets"
-  value       = join("\n", ["{ ", " \"clientId\": \"${azuread_application.main.application_id}\",", " \"clientSecret\": \"${azuread_application_password.main.value}\",", " \"subscriptionId\": \"${data.azurerm_subscription.main.subscription_id}\",", " \"tenantId\": \"${data.azurerm_client_config.current.tenant_id}\",", " \"activeDirectoryEndpointUrl\": \"https://login.microsoftonline.com\",", " \"resourceManagerEndpointUrl\": \"https://management.azure.com/\",", " \"activeDirectoryGraphResourceId\": \"https://graph.windows.net/\",", " \"sqlManagementEndpointUrl\": \"https://management.core.windows.net:8443/\",", " \"galleryEndpointUrl\": \"https://gallery.azure.com/\",", " \"managementEndpointUrl\": \"https://management.core.windows.net/\"", "}"])
-  sensitive   = true
+  description = "Azure secret"
+  value = templatefile(join("/", [path.module, "./files/azure-secret.json"]), {
+    client_id : data.azurerm_client_config.current.client_id
+    client_secret : azuread_application_password.main.value
+    subscription_id : data.azurerm_client_config.current.subscription_id
+    tenant_id : data.azurerm_client_config.current.tenant_id
+  })
+  sensitive = true
 }
 

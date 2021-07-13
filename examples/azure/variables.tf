@@ -10,3 +10,22 @@ variable "INSECURE_KUBECONFIG" {
   default     = false
 }
 
+variable "ARM_SUBSCRIPTION_ID" {
+  description = ""
+  type        = string
+}
+
+variable "ARM_CLIENT_ID" {
+  description = ""
+  type        = string
+}
+
+variable "ARM_CLIENT_SECRET" {
+  description = ""
+  type        = string
+}
+
+variable "ARM_TENANT_ID" {
+  description = ""
+  type        = string
+}
