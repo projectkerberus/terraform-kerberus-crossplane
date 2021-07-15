@@ -11,21 +11,21 @@ variable "INSECURE_KUBECONFIG" {
 }
 
 variable "ARM_SUBSCRIPTION_ID" {
-  description = ""
+  description = "The Subscription ID which should be used."
   type        = string
 }
 
 variable "ARM_CLIENT_ID" {
-  description = ""
+  description = "The Client ID which should be used. "
   type        = string
 }
 
 variable "ARM_CLIENT_SECRET" {
-  description = ""
+  description = "The Client Secret which should be used."
   type        = string
 }
 
 variable "ARM_TENANT_ID" {
-  description = ""
+  description = "The Tenant ID should be used."
   type        = string
 }
